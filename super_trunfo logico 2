@@ -1,0 +1,88 @@
+
+#include <stdio.h>
+#include <string.h>
+
+// Estrutura para armazenar os dados de uma carta
+typedef struct {
+    char nome[50];
+    unsigned long int populacao;
+    float area;
+    float pib;
+    int pontos_turisticos;
+    float densidade_demografica;
+} Carta;
+
+int main() {
+    Carta carta1 = {"Brasil", 213000000, 8515767.0, 14400.0, 70, 213000000 / 8515767.0};
+    Carta carta2 = {"Argentina", 45376763, 2780400.0, 640.0, 35, 45376763 / 2780400.0};
+
+    int opcao;
+
+    printf("=== SUPER TRUNFO: Comparação de Cartas ===\n");
+    printf("1. Populacao\n");
+    printf("2. Area\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turisticos\n");
+    printf("5. Densidade Demografica\n");
+    printf("Escolha o atributo para comparacao (1 a 5): ");
+    scanf("%d", &opcao);
+
+    printf("\nComparando: %s vs %s\n", carta1.nome, carta2.nome);
+
+    switch(opcao) {
+        case 1:
+            printf("Populacao: %lu (Carta 1) vs %lu (Carta 2)\n", carta1.populacao, carta2.populacao);
+            if (carta1.populacao > carta2.populacao)
+                printf("Resultado: Carta 1 venceu!\n");
+            else if (carta1.populacao < carta2.populacao)
+                printf("Resultado: Carta 2 venceu!\n");
+            else
+                printf("Resultado: Empate!\n");
+            break;
+
+        case 2:
+            printf("Area: %.2f (Carta 1) vs %.2f (Carta 2)\n", carta1.area, carta2.area);
+            if (carta1.area > carta2.area)
+                printf("Resultado: Carta 1 venceu!\n");
+            else if (carta1.area < carta2.area)
+                printf("Resultado: Carta 2 venceu!\n");
+            else
+                printf("Resultado: Empate!\n");
+            break;
+
+        case 3:
+            printf("PIB: %.2f (Carta 1) vs %.2f (Carta 2)\n", carta1.pib, carta2.pib);
+            if (carta1.pib > carta2.pib)
+                printf("Resultado: Carta 1 venceu!\n");
+            else if (carta1.pib < carta2.pib)
+                printf("Resultado: Carta 2 venceu!\n");
+            else
+                printf("Resultado: Empate!\n");
+            break;
+
+        case 4:
+            printf("Pontos Turisticos: %d (Carta 1) vs %d (Carta 2)\n", carta1.pontos_turisticos, carta2.pontos_turisticos);
+            if (carta1.pontos_turisticos > carta2.pontos_turisticos)
+                printf("Resultado: Carta 1 venceu!\n");
+            else if (carta1.pontos_turisticos < carta2.pontos_turisticos)
+                printf("Resultado: Carta 2 venceu!\n");
+            else
+                printf("Resultado: Empate!\n");
+            break;
+
+        case 5:
+            printf("Densidade Demografica: %.2f (Carta 1) vs %.2f (Carta 2)\n", carta1.densidade_demografica, carta2.densidade_demografica);
+            if (carta1.densidade_demografica < carta2.densidade_demografica)
+                printf("Resultado: Carta 1 venceu!\n");
+            else if (carta1.densidade_demografica > carta2.densidade_demografica)
+                printf("Resultado: Carta 2 venceu!\n");
+            else
+                printf("Resultado: Empate!\n");
+            break;
+
+        default:
+            printf("Opcao invalida. Por favor, escolha entre 1 e 5.\n");
+    }
+
+    return 0;
+}
